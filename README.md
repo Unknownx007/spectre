@@ -184,6 +184,25 @@ source venv/bin/activate           # Linux / macOS
 
 pip install -e .
 ```
+### FOR TERMUX 
+
+```
+## For some users  Pyside6  will give an issue not to install to fix that for below instructions:
+
+pkg install tur-repo -y
+pkg install x11-repo -y
+pkg update
+pkg install pyside6 -y
+
+# Then make a new venv with python and delete the old one :
+python -m venv --system-site-packahes venv
+source venv/bin/activate
+pip install requests>=2.31.0 beautifulsoup4>=4.12.0 rich>=13.7.0 flask>=3.0.0 flaredantic>=0.1.0
+pip install -e . --no-deps
+
+# Now the Spectre should be installed
+
+```
 
 Verify:
 
@@ -191,6 +210,9 @@ Verify:
 spectre --version
 # SPECTRE 1.0.0 (DEDSEC)
 ```
+
+## REMEMBER NOT TO USE " --gui "" IN TERMUX
+---
 
 ### Installing cloudflared (only for `--cloudflare` mode)
 
