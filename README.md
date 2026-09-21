@@ -1,33 +1,6 @@
 <div align="center">
 
-```
-                              ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-                           ▄█▀▀             ▀▀█▄
-                         ▄█▀                   ▀█▄
-                        ██                       ██
-                       ██   ████▄       ▄████    ██
-                      ██   ███████     ███████    ██
-                      ██   ███████     ███████    ██
-                      ██    ▀████▀     ▀████▀     ██
-                       ██                         ██
-                        ██    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀    ██
-                        ██                       ██
-                         ██                     ██
-                          ██                   ██
-                           ██                 ██
-                            ██               ██
-                             ██             ██
-                              ██           ██
-                               ██         ██
-                                ██       ██
-                                 ██     ██
-                                  ██   ██
-                                   ██ ██
-                                    ███
-                                     ▀
-```
-
-### P H I S H I N G   S I M U L A T I O N   F R A M E W O R K
+<img width="948" height="768" alt="1" src="https://github.com/user-attachments/assets/5898a7b4-7569-4f6d-8b37-3fe62c895af8" />
 
 **built by DEDSEC · "Every click is a confession."**
 
@@ -391,52 +364,6 @@ spectre https://target-org.com/login \
 ```
 $ spectre https://target-org.com/login --cloudflare
 
-▓▒░ S P E C T R E · O N L I N E ▓▒░
-─────────────────────────────────
-              (hooded figure, animated)
-              S P E C T R E
-              PHISHING SIMULATION FRAMEWORK
-              v1.0.0 · built by DEDSEC
-
-[legal notice panel appears]
-
-Do you have written authorization? [y/n]: y
-
-▓▒░ 1 - CLONING TARGET ░▒▓
-[ OK ] fetched: HTTP 200 (8.2 KB)
-[ OK ] instrumented 2 forms
-[ OK ] cloned page → ~/spectre_data/pages/target-org.com/index.html
-
-▓▒░ 2 - STARTING LOCAL SERVER ░▒▓
-[ OK ] serving on http://127.0.0.1:8080/
-
-[PUBLIC EXPOSURE WARNING panel]
-Confirm public exposure? [y/n]: y
-[INFO] using system cloudflared: /usr/bin/cloudflared
-[STEP] starting cloudflare tunnel (quic) -> http://127.0.0.1:8080
-[INFO] verifying tunnel is reachable from the edge …
-[ OK ] public URL: https://random-words.trycloudflare.com
-
-╭────────── LIVE - PUBLIC ──────────╮
-│ PUBLIC URL                        │
-│   https://random-words.trycloudflare.com │
-│                                   │
-│ local    : http://127.0.0.1:8080/ │
-│ cloned   : https://target-org.com/login │
-│ assets   : 4                      │
-│ forms    : 2                      │
-│ campaign : 20260921-232441        │
-│ captures : ~/spectre_data/captures-20260921-232441.jsonl │
-╰───────────────────────────────────╯
-
-▓▒░ 3 - LIVE CAPTURES (CTRL+C TO STOP) ░▒▓
-23:24:50  CAPTURE  alice@corp  hunter2      10.0.0.42
-23:25:13  CAPTURE  bob@corp    qwerty123    10.0.0.57
-^C
-[INFO] shutting down
-[INFO] cloudflare tunnel stopped
-[ OK ] report -> ~/spectre_data/reports/report-20260921-232441.md
-[ OK ] report -> ~/spectre_data/reports/report-20260921-232441.json
 ```
 
 ---
@@ -503,38 +430,6 @@ leaves a DEDSEC watermark in its output.
 
 ---
 
-## The DEDSEC Provenance Guard
-
-SPECTRE ships with a runtime identity check. If someone removes or replaces
-the original `DEDSEC` authorship, the tool refuses to run:
-
-```
-┌──────────────────────────────────────────────────────┐
-│              PROVENANCE CHECK FAILED                 │
-└──────────────────────────────────────────────────────┘
-  The authorship of this copy has been modified.
-
-  Expected : DEDSEC
-  Found    : NotDEDSEC
-
-  This tool is licensed under AGPL-3.0 with Additional
-  Attribution Terms. Those terms require the original
-  author credit to be preserved in every copy, fork,
-  and derivative work.
-
-  The tool will refuse to run in this configuration.
-  No files have been modified or deleted. No data has
-  been sent anywhere.
-
-  Original : https://github.com/Unknownx007/spectre
-```
-
-The check runs at module import time, at logger init, at HTTP client init,
-at campaign load, and at report serialization. Disabling it requires editing
-multiple files.
-
----
-
 ## Directory layout
 
 ```
@@ -594,10 +489,6 @@ cloudflared tunnel --url http://127.0.0.1:8080 --protocol http2 --edge-ip-versio
 
 If manual works but SPECTRE doesn't, open an issue with both outputs.
 
-### "PROVENANCE CHECK FAILED"
-
-Someone modified the `DEDSEC` credit. Restore it in `spectre/__init__.py`.
-
 ### `spectre: command not found` after `pip install -e .`
 
 The venv isn't active. Run `source venv/bin/activate` first.
@@ -612,46 +503,6 @@ log lines via a logger level adjustment.
 GitHub's release CDN occasionally throttles. Retry `spectre --cloudflare`
 once or twice. If it consistently fails, install cloudflared as a system
 binary with `spectre setup`.
-
----
-
-## Roadmap
-
-- [x] Login page cloner with asset rewriting
-- [x] Form instrumentation
-- [x] Local capture server
-- [x] Auto mode (one command)
-- [x] Live terminal capture tail
-- [x] PySide6 GUI dashboard
-- [x] Cloudflare tunnel with QUIC → HTTP/2 fallback
-- [x] Tunnel URL verification before printing
-- [x] Campaign management with allowlist enforcement
-- [x] SMTP delivery with safety headers
-- [x] JSON + Markdown reports
-- [x] Provenance guard (DEDSECAV)
-- [x] Auto OS-aware cloudflared installer (`spectre setup`)
-- [ ] Tracking pixels (per-recipient open tracking)
-- [ ] Click tracking with unique tokens
-- [ ] 2FA-aware capture (token replay)
-- [ ] Mobile-responsive clones (viewport adjustment)
-- [ ] Attachment-based payloads (LNK, HTA, ISO)
-- [ ] CAPTCHA bypass detection in cloned forms
-- [ ] Retry queue for SMTP failures
-- [ ] Remote campaign sync (multi-operator)
-
----
-
-## GitHub topics
-
-Paste into repo → Settings → Topics:
-
-```
-phishing-simulation  security-awareness  red-team  penetration-testing
-ethical-hacking  python3  cli  pyqt6  dedsec  offensive-security
-security-tools  credential-harvesting  authorized-testing
-cloudflare-tunnel  social-engineering  security-training
-email-security  security-awareness-training  pentest  soc
-```
 
 ---
 
@@ -673,10 +524,103 @@ package with a terminal-first UX and an optional GUI.
 
 ## License
 
-AGPL-3.0 with Additional Attribution Terms (Section 7). See `LICENSE`.
+SPECTRE — Phishing Simulation Framework
+Copyright (c) 2026 DEDSEC
+Licensed under AGPL-3.0 with Additional Terms (Section 7)
 
+================================================================================
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+The full text of AGPL-3.0 is available at:
+    https://www.gnu.org/licenses/agpl-3.0.txt
+
+================================================================================
+ADDITIONAL TERMS — Section 7 of the AGPL
+================================================================================
+
+In accordance with Section 7 of the AGPL-3.0, the following additional terms
+apply to SPECTRE. These terms are non-waivable and apply to all copies,
+modifications, and derivative works of the Software.
+
+1. ATTRIBUTION OF AUTHORSHIP
+
+   All copies, forks, derivative works, and redistributions of SPECTRE MUST
+   retain, in full and unaltered form:
+
+     • The copyright notice above (Copyright (c) 2026 DEDSEC)
+     • This LICENSE file, including all additional terms
+     • The author name "DEDSEC" in the CREDITS, AUTHORS, and README files
+     • The provenance guard in `spectre/_meta.py` (unmodified)
+     • The full text of this license displayed via `spectre --license`
+
+2. PRESERVATION OF TOOL IDENTITY
+
+   You may NOT:
+     • Rename, rebrand, or republish SPECTRE under a different name
+       without written permission from DEDSEC
+     • Replace, obscure, or remove the "SPECTRE" name from the startup
+       banner, ASCII logo, terminal output, documentation, or reports
+     • Replace the "DEDSEC" attribution with your own name, handle, or brand
+     • Present SPECTRE, or any substantial derivative of it, as your
+       original work
+
+   You MAY:
+     • Add your own name as a "modifier" alongside the original author
+       (e.g., "SPECTRE by DEDSEC, modified by <your-name>")
+     • Fork SPECTRE and clearly state in your fork that it is a derivative
+       of SPECTRE by DEDSEC
+     • Add new features, modules, or templates — those additions may be
+       credited to you
+
+3. NOTIFICATION OF MODIFICATION
+
+   Every modified copy MUST carry a prominent notice stating:
+     • That the file has been modified
+     • The date of modification
+     • The name of the modifier
+
+4. OPEN SOURCE OBLIGATION (AGPL §13)
+
+   Any deployment of SPECTRE (or a modified version) as a network service
+   MUST make the complete corresponding source code available to users of
+   that service, in accordance with the AGPL-3.0.
+
+5. NO WARRANTY
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+   THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+   DEALINGS IN THE SOFTWARE.
+
+================================================================================
+ENFORCEMENT
+================================================================================
+
+Violations of these additional terms — including rebranding, removal of
+author credits, or closed-source redistribution — constitute copyright
+infringement under the Berne Convention and the Digital Millennium Copyright
+Act (DMCA).
+
+Confirmed violations will be:
+     • Reported to the platform hosting the infringing copy
+     • Reported via GitHub DMCA takedown if applicable
+     • Publicly disclosed with evidence
+
+To request permission for commercial rebranding or a license exception,
+contact DEDSEC through the official repository:
+
+    https://github.com/Unknownx007/spectre
+
+---
 <div align="center">
 
 *"We do not steal. We simulate. The difference is everything."*
 
 </div>
+---
