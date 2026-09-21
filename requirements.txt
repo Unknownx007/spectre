@@ -1,0 +1,6 @@
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+rich>=13.7.0
+flask>=3.0.0
+PySide6>=6.6.0
+flaredantic>=0.1.0

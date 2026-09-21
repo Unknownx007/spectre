@@ -1,0 +1,92 @@
+SPECTRE — Phishing Simulation Framework
+Copyright (c) 2026 DEDSEC
+Licensed under AGPL-3.0 with Additional Terms (Section 7)
+
+================================================================================
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+The full text of AGPL-3.0 is available at:
+    https://www.gnu.org/licenses/agpl-3.0.txt
+
+================================================================================
+ADDITIONAL TERMS — Section 7 of the AGPL
+================================================================================
+
+In accordance with Section 7 of the AGPL-3.0, the following additional terms
+apply to SPECTRE. These terms are non-waivable and apply to all copies,
+modifications, and derivative works of the Software.
+
+1. ATTRIBUTION OF AUTHORSHIP
+
+   All copies, forks, derivative works, and redistributions of SPECTRE MUST
+   retain, in full and unaltered form:
+
+     • The copyright notice above (Copyright (c) 2026 DEDSEC)
+     • This LICENSE file, including all additional terms
+     • The author name "DEDSEC" in the CREDITS, AUTHORS, and README files
+     • The provenance guard in `spectre/_meta.py` (unmodified)
+     • The full text of this license displayed via `spectre --license`
+
+2. PRESERVATION OF TOOL IDENTITY
+
+   You may NOT:
+     • Rename, rebrand, or republish SPECTRE under a different name
+       without written permission from DEDSEC
+     • Replace, obscure, or remove the "SPECTRE" name from the startup
+       banner, ASCII logo, terminal output, documentation, or reports
+     • Replace the "DEDSEC" attribution with your own name, handle, or brand
+     • Present SPECTRE, or any substantial derivative of it, as your
+       original work
+
+   You MAY:
+     • Add your own name as a "modifier" alongside the original author
+       (e.g., "SPECTRE by DEDSEC, modified by <your-name>")
+     • Fork SPECTRE and clearly state in your fork that it is a derivative
+       of SPECTRE by DEDSEC
+     • Add new features, modules, or templates — those additions may be
+       credited to you
+
+3. NOTIFICATION OF MODIFICATION
+
+   Every modified copy MUST carry a prominent notice stating:
+     • That the file has been modified
+     • The date of modification
+     • The name of the modifier
+
+4. OPEN SOURCE OBLIGATION (AGPL §13)
+
+   Any deployment of SPECTRE (or a modified version) as a network service
+   MUST make the complete corresponding source code available to users of
+   that service, in accordance with the AGPL-3.0.
+
+5. NO WARRANTY
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+   THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+   DEALINGS IN THE SOFTWARE.
+
+================================================================================
+ENFORCEMENT
+================================================================================
+
+Violations of these additional terms — including rebranding, removal of
+author credits, or closed-source redistribution — constitute copyright
+infringement under the Berne Convention and the Digital Millennium Copyright
+Act (DMCA).
+
+Confirmed violations will be:
+     • Reported to the platform hosting the infringing copy
+     • Reported via GitHub DMCA takedown if applicable
+     • Publicly disclosed with evidence
+
+To request permission for commercial rebranding or a license exception,
+contact DEDSEC through the official repository:
+
+    https://github.com/Unknownx007/spectre

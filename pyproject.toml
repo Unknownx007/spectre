@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spectre"
+version = "1.0.0"
+description = "SPECTRE — phishing simulation framework (lab-scoped) // DEDSEC"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "AGPL-3.0-or-later"}
+authors = [{name = "DEDSEC"}]
+dependencies = [
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+    "rich>=13.7.0",
+    "flask>=3.0.0",
+    "PySide6>=6.6.0",
+    "flaredantic>=0.1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "black>=24.0", "ruff>=0.3"]
+
+[project.scripts]
+spectre = "spectre.__main__:main"
+
+[tool.setuptools]
+packages = [
+    "spectre",
+    "spectre.core",
+    "spectre.clone",
+    "spectre.serve",
+    "spectre.campaign",
+    "spectre.send",
+    "spectre.track",
+    "spectre.report",
+]
